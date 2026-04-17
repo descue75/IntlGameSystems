@@ -79,6 +79,32 @@ ctest --test-dir build
 
 ---
 
+## 🐞 Debugging
+
+Build with debug symbols (recommended for development):
+
+```bash
+cmake -S . -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+```
+
+Run the app under the debugger in VS Code (`F5`) or use `gdb` manually:
+
+```bash
+gdb ./build/IntlGameSystems
+```
+
+Basic `gdb` example:
+
+```gdb
+break main
+run
+next
+continue
+```
+
+---
+
 ## 🧪 Testing
 
 Tests are written using **GoogleTest** and integrated via CMake/CTest.
@@ -102,7 +128,8 @@ clang-tidy runs automatically during the build via CMake.
 ## 🧭 Roadmap
 
 ### Project 1
-- Config + validation system
+- Config + validation system  
+- [Details](docs/projects/project1_config_validation.md)
 
 ### Project 2
 - Strategy pattern (behavior variation)
